@@ -9,16 +9,25 @@ function displayRender() {
     header.classList.add('page-header')
     const h1 = document.createElement('h1')
     h1.textContent = 'My To Do Items'
-    // add button to add a new to do item
+    const addItem = document.createElement('button')
+    addItem.textContent = '+'
+    addItem.classList.add('add-item')
     // other buttons, CRUD type operations?
     header.appendChild(h1)
+    header.appendChild(addItem)
 
     // aside navbar initialization
     const asideNav = document.createElement('aside')
     asideNav.classList.add('aside-nav')
 
     // aside navbar menu options
-    const allProjects = document.createElement('p') // nav options will be clickable
+    const taskDiv = document.createElement('div')
+    taskDiv.classList.add('task-div')
+    const tasks = document.createElement('strong')
+    tasks.classList.add('task-header')
+    tasks.textContent = 'Tasks'
+    taskDiv.appendChild(tasks)
+    const allProjects = document.createElement('p')
     allProjects.textContent = 'All Projects'
     allProjects.style.fontSize = 'x-large'
     const highPriority = document.createElement('p')
@@ -30,9 +39,11 @@ function displayRender() {
     const lowPriority = document.createElement('p')
     lowPriority.textContent = 'Low Priority'
     lowPriority.style.color = 'rgba( 52, 137, 52)'
-    const signature = document.createElement('p')
+    const signature = document.createElement('small')
     signature.classList.add('signature')
     signature.textContent = 'Made By: Dallas Pataska'
+
+    asideNav.appendChild(taskDiv)
     asideNav.appendChild(allProjects)
     asideNav.appendChild(highPriority)
     asideNav.appendChild(mediumPriority)

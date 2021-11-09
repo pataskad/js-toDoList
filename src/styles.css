@@ -6,16 +6,36 @@
 }
 .page-header {
     height: auto;
+    text-align: center;
     background-color: rgba(204, 54, 54, 0.822);
     box-shadow: 0 0px 9px rgba(10, 10, 10, 1);
 }
 .page-header > h1 {
+    display: inline-block;
     background: none;
     color: whitesmoke;
-    text-align: center;
-    padding: 15px 0 15px 0;
+    margin: 12px 0 10px 0;
+}
+.add-item {
+    height: auto;
+    width: auto;
+    position: absolute;
+    right: 1%;
+    padding: 10px 12px 10px 12px;
+    background: none;
+    font-size: xx-large;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.add-item:hover {
+    background-color: rgba(53, 51, 51, 0.541);
+}
+.add-item:active {
+    transform: translateY(1px);
 }
 .aside-nav {
+    display: inline-block;
     padding: 40px 20px 20px 20px;
     height: 790px;
     width: 8%;
@@ -25,15 +45,34 @@
 }
 .aside-nav > p {
     height: auto;
-    padding-top: 15px;
+    margin-top: 15px;
     background: none;
     font-size: larger;
+    color: rgb(80, 79, 79);
+}
+.aside-nav > p:hover {
+    cursor: pointer;
     font-weight: bold;
-    color: rgb(80, 79, 79);;
+    transform: translateY(-2px);
+}
+.aside-nav > p:active {
+    transform: translateY(1px);
+}
+.task-div {
+    background: none;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(36, 36, 36, 0.877);
+}
+.task-header {
+    background: none;
+    font-weight: bold;
+    font-size: xx-large;
+    color: rgba(36, 36, 36, 0.877);
 }
 .signature {
     font-size: small !important;
     color: gray !important;
+    background: none;
     position: absolute;
     bottom: 1%;
 }

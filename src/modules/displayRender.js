@@ -8,7 +8,7 @@ function displayRender() {
 
     headerRender()
     asideRender()
-    
+    // toDoRenderAll()
 }
 // helper functions
 function headerRender() {
@@ -69,5 +69,11 @@ function asideRender() {
     asideNav.appendChild(signature)
     document.body.appendChild(asideNav)
 }
+/* function toDoRenderAll() {
+    for (let i = 0; i < myToDoItems.length; i++) {
+        // create div to wrap task within
+        // format sections for each property within each todo item
+    }
+} */
 
 export { displayRender }

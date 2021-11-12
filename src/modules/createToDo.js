@@ -3,12 +3,12 @@
 
 let myToDoItems = [
     // use date fns package for modifying/setting date?
-    // priority possibilities (Low, Med, High)
+    // priority possibilities (Low - 1, Med - 2, High - 3)
     {
       title: "Placeholder Title",
       description: "Placeholder Description",
       dueDate: "5:00pm November 19th, 2021", 
-      priority: "Low",   
+      priority: 1,   
     },
 ]
 
@@ -17,7 +17,7 @@ class ToDoItem {
         this.title = title
         this.description = description
         this.dueDate = dueDate
-        this.priority = priority
+        this.priority = priority // 1, 2, or 3
     }
 }
 

@@ -1,19 +1,18 @@
 import '../styles.css' 
+import { myToDoItems } from './createToDo.js'
 
-// create and render header bar, aside nav section, and main content formatting
-
+// DOM logic for rending to display
+ 
 function displayRender() {
     /* separate functions used to for creating each section of the page before nesting 
     functions within displayRender to be exported to index.js. (Creating bite sized bits of code) */
 
     headerRender()
     asideRender()
-    // toDoRenderAll()
+    toDoItemRender()
 }
 // helper functions
 function headerRender() {
-    // header bar rendering 
-
     const header = document.createElement('div')
     header.classList.add('page-header')
 
@@ -29,8 +28,6 @@ function headerRender() {
     document.body.appendChild(header)
 }
 function asideRender() {
-    // aside navbar menu options
-
     const asideNav = document.createElement('aside')
     asideNav.classList.add('aside-nav')
 
@@ -69,11 +66,41 @@ function asideRender() {
     asideNav.appendChild(signature)
     document.body.appendChild(asideNav)
 }
-/* function toDoRenderAll() {
+function toDoItemRender() {
+    myToDoItems.sort(function(a, b) {
+        // sort function places highest priority toDo items first
+        return b.priority - a.priority
+    })
+    console.log(myToDoItems)
+    const toDoWrapper = document.createElement('div')
+    toDoWrapper.classList.add('toDo-wrapper')
     for (let i = 0; i < myToDoItems.length; i++) {
-        // create div to wrap task within
-        // format sections for each property within each todo item
+        const toDoDiv = document.createElement('div')
+        toDoDiv.classList.add('toDo-div')
+        if (myToDoItems[i].priority == 1) {
+            toDoDiv.style.backgroundColor = 'rgba(34, 138, 34, 0.342)'
+        }
+        if (myToDoItems[i].priority == 2) {
+            toDoDiv.style.backgroundColor = 'rgba(143, 117, 21, .342)'
+        }
+        if (myToDoItems[i].priority == 3) {
+            toDoDiv.style.backgroundColor = 'rgba(204, 54, 54, 0.342)'
+        }
+        const title = document.createElement('p')
+        title.classList.add('toDo-title')
+        title.innerHTML = `${myToDoItems[i].title}`
+        const toDoDeleteBtn = document.createElement('span')
+        toDoDeleteBtn.innerHTML = '&times;'
+        toDoDeleteBtn.classList.add('toDo-deleteBtn')
+        const description = document.createElement('p')
+        description.innerHTML = `${myToDoItems[i].description}` 
+
+        toDoDiv.appendChild(title)
+        toDoDiv.appendChild(toDoDeleteBtn)
+        toDoDiv.appendChild(description)
+        toDoWrapper.appendChild(toDoDiv)
+        document.body.appendChild(toDoWrapper)
     }
-} */
+}
 
 export { displayRender }

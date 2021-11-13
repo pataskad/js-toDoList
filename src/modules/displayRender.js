@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import '../styles.css' 
 import { myToDoItems } from './createToDo.js'
 
@@ -71,7 +72,6 @@ function toDoItemRender() {
         // sort function places highest priority toDo items first
         return b.priority - a.priority
     })
-    console.log(myToDoItems)
     const toDoWrapper = document.createElement('div')
     toDoWrapper.classList.add('toDo-wrapper')
     for (let i = 0; i < myToDoItems.length; i++) {

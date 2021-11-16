@@ -1,13 +1,13 @@
 import _ from 'lodash'
 import '../styles.css' 
-import { myToDoItems } from './createToDo.js'
+import { myToDoItems } from './createToDo'
 
-// DOM logic for rending to display
+// DOM logic for rendering to display
  
 function displayRender() {
     /* separate functions used to for creating each section of the page before nesting 
-    functions within displayRender to be exported to index.js. (Creating bite sized bits of code) */
-
+    functions within displayRender to be exported to index.js.
+    (Creating bite sized bits of code for modularity) */
     headerRender()
     asideRender()
     toDoItemRender()
@@ -77,6 +77,7 @@ function toDoItemRender() {
     for (let i = 0; i < myToDoItems.length; i++) {
         const toDoDiv = document.createElement('div')
         toDoDiv.classList.add('toDo-div')
+
         if (myToDoItems[i].priority == 1) {
             toDoDiv.style.backgroundColor = 'rgba(34, 138, 34, 0.342)'
         }
@@ -86,11 +87,13 @@ function toDoItemRender() {
         if (myToDoItems[i].priority == 3) {
             toDoDiv.style.backgroundColor = 'rgba(204, 54, 54, 0.342)'
         }
+
         const title = document.createElement('p')
         title.classList.add('toDo-title')
         title.innerHTML = `${myToDoItems[i].title}`
         const toDoDeleteBtn = document.createElement('span')
         toDoDeleteBtn.innerHTML = '&times;'
+        toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`
         toDoDeleteBtn.classList.add('toDo-deleteBtn')
         const description = document.createElement('p')
         description.innerHTML = `${myToDoItems[i].description}` 
@@ -102,5 +105,9 @@ function toDoItemRender() {
         document.body.appendChild(toDoWrapper)
     }
 }
+function clearOldItems() {
+    const toDoWrapper = document.querySelector('.toDo-wrapper')
+    toDoWrapper.remove()
+}
 
-export { displayRender }
+export { displayRender, toDoItemRender, clearOldItems }

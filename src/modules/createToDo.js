@@ -1,4 +1,3 @@
-// contains logic to create a new to do item 
 // add every level priority to 2d array, .filter (via lodash) to render correct display
 
 let myToDoItems = [
@@ -17,7 +16,7 @@ class ToDoItem {
         this.title = title
         this.description = description
         this.dueDate = dueDate
-        this.priority = priority // 1, 2, or 3
+        this.priority = priority
     }
 }
 

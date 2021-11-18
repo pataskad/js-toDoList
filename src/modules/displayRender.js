@@ -2,8 +2,6 @@ import _ from 'lodash'
 import '../styles.css' 
 import { myToDoItems } from './createToDo'
 import  '../assets/images/GitHub-Mark-32px.png'
-
-// DOM logic for rendering to display
  
 function displayRender() {
     /* separate functions used to for creating each section of the page before nesting 
@@ -41,18 +39,26 @@ function asideRender() {
     taskDiv.appendChild(tasks)
 
     const allProjects = document.createElement('p')
+    allProjects.dataset.attribute = 0
+    allProjects.classList.add('tasks-nav')
     allProjects.textContent = 'All Projects'
     allProjects.style.fontSize = 'x-large'
 
     const highPriority = document.createElement('p')
+    highPriority.dataset.attribute = 1
+    highPriority.classList.add('tasks-nav')
     highPriority.textContent = 'High Priority'
     highPriority.style.color = 'rgba(250, 54, 54, 0.822)'
 
     const mediumPriority = document.createElement('p')
+    mediumPriority.dataset.attribute = 2
+    mediumPriority.classList.add('tasks-nav')
     mediumPriority.textContent = 'Medium Priority'
     mediumPriority.style.color = 'rgba(143, 117, 21)'
 
     const lowPriority = document.createElement('p')
+    lowPriority.dataset.attribute = 3
+    lowPriority.classList.add('tasks-nav')
     lowPriority.textContent = 'Low Priority'
     lowPriority.style.color = 'rgba( 52, 137, 52)'
 
@@ -108,7 +114,14 @@ function toDoItemRender() {
 }
 function clearOldItems() {
     const toDoWrapper = document.querySelector('.toDo-wrapper')
-    toDoWrapper.remove()
+    // wrapped in boolean to only run when element is present
+    if (toDoWrapper) {
+        toDoWrapper.remove()
+    }
 }
 
-export { displayRender, toDoItemRender, clearOldItems }
+export {
+    displayRender, 
+    toDoItemRender, 
+    clearOldItems,
+}

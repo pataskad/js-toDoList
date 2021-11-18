@@ -1,8 +1,14 @@
 import _ from 'lodash'
 import './styles.css'
-import { displayRender, clearOldItems } from './modules/displayRender'
-import { ToDoItem, myToDoItems } from './modules/createToDo'
-import { deleteItem } from './modules/toDoManager'
+import { displayRender, toDoItemRender, } from './modules/displayRender'
+import { ToDoItem, myToDoItems, } from './modules/createToDo'
+import { 
+    deleteItem,
+    showAllTasks, 
+    showHighPriorityTasks, 
+    showMediumPriorityTasks,
+    showLowPriorityTasks, 
+} from './modules/toDoManager'
  
 window.addEventListener('load', function() {
     // KEEP SOLID PRINCIPLES IN MIND! REFACTOR WHERE NEEDED, START ROUGH AND REFINE
@@ -20,13 +26,26 @@ window.addEventListener('load', function() {
         myToDoItems.push(test)
     } */
 
-    // renders basic layout, nav, header, and formatting.
-    displayRender()
+    displayRender() // renders basic layout, nav, header, and formatting.
 
     // event listener logic to manage certain events, REVIEW PLACEMENT OF LOGIC!
     document.addEventListener('click', function(e) {
         if (e.target.matches('.toDo-deleteBtn')) {
             deleteItem(e)
+        }
+        if (e.target.matches('.tasks-nav')) {
+            if (e.target.dataset.attribute == 0) {
+                showAllTasks()  
+            }
+            if (e.target.dataset.attribute == 1) {
+                showHighPriorityTasks()
+            }
+            if (e.target.dataset.attribute == 2) {
+                showMediumPriorityTasks()
+            }
+            if (e.target.dataset.attribute == 3) {
+                showLowPriorityTasks()
+            }
         }
     })
 })

@@ -47,17 +47,17 @@
     background-color: rgba(219, 218, 218, 0.788);
     box-shadow: -1px 2px 5px rgba(10, 10, 10, 1);
 }
-.aside-nav > p {
+.tasks-nav {
     height: auto;
     margin-top: 15px;
     background: none;
     font-size: larger;
     color: rgb(80, 79, 79);
 }
-.aside-nav > p:hover {
+.tasks-nav:hover {
     cursor: pointer;
 }
-.aside-nav > p:active {
+.tasks-nav:active {
     transform: translateY(1px);
 }
 .toDo-wrapper {
@@ -113,8 +113,10 @@
     font-size: small !important;
     color: gray !important;
     background: none;
-    position: absolute;
-    bottom: 30%;
+    position: fixed;
+    margin-top: 20px;
+    padding-top: 30px;
+    border-top: 1px solid black;
     text-align: center;
 }
 .signature > a {
@@ -125,5 +127,5 @@
 }
 .signature > a > img {
     background: none;
-    margin: 20px 10px 10px 0;
+    margin: 20px;
 }

@@ -40,7 +40,7 @@
     display: inline-block;
     margin: 60px 0 0 0;
     padding: 40px 20px 20px 20px;
-    height: 83%;
+    height: -webkit-fill-available;
     width: 8%;
     position: fixed;
     text-align: left;
@@ -56,8 +56,6 @@
 }
 .aside-nav > p:hover {
     cursor: pointer;
-    font-weight: bold;
-    transform: translateY(-2px);
 }
 .aside-nav > p:active {
     transform: translateY(1px);
@@ -116,5 +114,16 @@
     color: gray !important;
     background: none;
     position: absolute;
-    bottom: 1%;
+    bottom: 30%;
+    text-align: center;
+}
+.signature > a {
+    background: none;
+    text-decoration: none;
+    vertical-align: middle;
+    color: rgba(212, 20, 20, 0.76);
+}
+.signature > a > img {
+    background: none;
+    margin: 20px 10px 10px 0;
 }

@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import '../styles.css' 
 import { myToDoItems } from './createToDo'
+import  '../assets/images/GitHub-Mark-32px.png'
 
 // DOM logic for rendering to display
  
@@ -57,11 +58,11 @@ function asideRender() {
 
     const signature = document.createElement('small')
     signature.classList.add('signature')
-    signature.textContent = 'Made By: Dallas Pataska'
+    signature.innerHTML = `Made By: <a href="https://www.linkedin.com/in/dallas-pataska/">Dallas Pataska</a><br><a href="https://github.com/pataskad/js-toDoList"><img src="0035c307a36c17babb8d.png"></a>`
 
     asideNav.appendChild(taskDiv)
     asideNav.appendChild(allProjects)
-    asideNav.appendChild(highPriority)
+    asideNav.appendChild(highPriority) 
     asideNav.appendChild(mediumPriority)
     asideNav.appendChild(lowPriority)
     asideNav.appendChild(signature)

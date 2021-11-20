@@ -6,17 +6,17 @@ import {
   showAllTasks,
   showHighPriorityTasks,
   showMediumPriorityTasks,
-  showLowPriorityTasks
+  showLowPriorityTasks,
+  toggleDescription
 } from "./modules/toDoManager";
 
 window.addEventListener("load", function () {
-  // KEEP SOLID PRINCIPLES IN MIND! REFACTOR WHERE NEEDED, START ROUGH AND REFINE
-  // window event listener used to ensure content is loaded properly
+  // window event listener used to ensure content is loaded properly in correct order
 
   // testing item object
-  const test = new ToDoItem("Placeholder Title", "Placeholder Description", "Nov 5th, 5pm", 2);
+  const test = new ToDoItem("Placeholder Title", "Placeholder Description", "11/25/21", 2);
   myToDoItems.push(test);
-  const test2 = new ToDoItem("Placeholder Title", "Placeholder Description", "Nov 5th, 5pm", 3);
+  const test2 = new ToDoItem("Placeholder Title", "Placeholder Description", "11/25/21", 3);
   myToDoItems.push(test2);
 
   // loop for testing high volume tasks
@@ -31,6 +31,9 @@ window.addEventListener("load", function () {
   document.addEventListener("click", function (e) {
     if (e.target.matches(".toDo-deleteBtn")) {
       deleteItem(e);
+    }
+    if (e.target.matches(".expand-todo")) {
+      toggleDescription(e);
     }
     if (e.target.matches(".tasks-nav")) {
       if (e.target.dataset.attribute === "0") {

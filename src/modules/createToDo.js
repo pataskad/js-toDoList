@@ -6,9 +6,9 @@ const myToDoItems = [
   {
     title: "Placeholder Title",
     description: "Placeholder Description",
-    dueDate: "5:00pm November 19th, 2021",
-    priority: 1,
-    id: 0
+    dueDate: "11/27/21",
+    priority: 1
+
   }
 ];
 

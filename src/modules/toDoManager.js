@@ -28,6 +28,19 @@ function deleteItem (e) {
     showLowPriorityTasks();
   }
 }
+function toggleDescription (e) {
+  const elementIndex = e.target.dataset.attribute;
+  const descElement = document.querySelectorAll(".description");
+  const descElementsArray = [...descElement];
+
+  if (descElementsArray[elementIndex].classList.contains("task-description-hidden")) {
+    descElementsArray[elementIndex].classList.remove("task-description-hidden");
+    descElementsArray[elementIndex].classList.add("task-description-visible");
+  } else {
+    descElementsArray[elementIndex].classList.remove("task-description-visible");
+    descElementsArray[elementIndex].classList.add("task-description-hidden");
+  }
+}
 function showAllTasks () {
   clearOldItems();
 
@@ -73,20 +86,34 @@ function showHighPriorityTasks () {
       const toDoDiv = document.createElement("div");
       toDoDiv.classList.add("toDo-div");
 
-      toDoDiv.style.backgroundColor = "rgba(204, 54, 54, 0.342)";
+      toDoDiv.style.backgroundColor = "rgba(204, 54, 54, 0.200)";
 
       const title = document.createElement("p");
       title.classList.add("toDo-title");
       title.innerHTML = `${highPriorityItems[i].title}`;
+
+      const expandBtn = document.createElement("span");
+      expandBtn.innerHTML = "&#43;";
+      expandBtn.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`;
+      expandBtn.classList.add("expand-todo");
+
       const toDoDeleteBtn = document.createElement("span");
       toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(highPriorityItems[i])}`;
-      toDoDeleteBtn.innerHTML = "&times;";
+      toDoDeleteBtn.innerHTML = "&#10003;";
       toDoDeleteBtn.classList.add("toDo-deleteBtn");
+
+      const dueDate = document.createElement("p");
+      dueDate.innerHTML = `Due By: ${myToDoItems[i].dueDate}`;
+      dueDate.classList.add("due-date");
+
       const description = document.createElement("p");
+      description.classList.add("task-description-hidden");
       description.innerHTML = `${highPriorityItems[i].description}`;
 
       toDoDiv.appendChild(title);
       toDoDiv.appendChild(toDoDeleteBtn);
+      toDoDiv.appendChild(expandBtn);
+      toDoDiv.appendChild(dueDate);
       toDoDiv.appendChild(description);
       toDoWrapper.appendChild(toDoDiv);
       document.body.appendChild(toDoWrapper);
@@ -118,20 +145,34 @@ function showMediumPriorityTasks () {
       const toDoDiv = document.createElement("div");
       toDoDiv.classList.add("toDo-div");
 
-      toDoDiv.style.backgroundColor = "rgba(143, 117, 21, .342)";
+      toDoDiv.style.backgroundColor = "rgba(143, 117, 21, .200)";
 
       const title = document.createElement("p");
       title.classList.add("toDo-title");
       title.innerHTML = `${mediumPriorityItems[i].title}`;
+
+      const expandBtn = document.createElement("span");
+      expandBtn.innerHTML = "&#43;";
+      expandBtn.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`;
+      expandBtn.classList.add("expand-todo");
+
       const toDoDeleteBtn = document.createElement("span");
       toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(mediumPriorityItems[i])}`;
-      toDoDeleteBtn.innerHTML = "&times;";
+      toDoDeleteBtn.innerHTML = "&#10003;";
       toDoDeleteBtn.classList.add("toDo-deleteBtn");
+
+      const dueDate = document.createElement("p");
+      dueDate.innerHTML = `Due By: ${myToDoItems[i].dueDate}`;
+      dueDate.classList.add("due-date");
+
       const description = document.createElement("p");
+      description.classList.add("task-description-hidden");
       description.innerHTML = `${mediumPriorityItems[i].description}`;
 
       toDoDiv.appendChild(title);
       toDoDiv.appendChild(toDoDeleteBtn);
+      toDoDiv.appendChild(expandBtn);
+      toDoDiv.appendChild(dueDate);
       toDoDiv.appendChild(description);
       toDoWrapper.appendChild(toDoDiv);
       document.body.appendChild(toDoWrapper);
@@ -163,20 +204,34 @@ function showLowPriorityTasks () {
       const toDoDiv = document.createElement("div");
       toDoDiv.classList.add("toDo-div");
 
-      toDoDiv.style.backgroundColor = "rgba(34, 138, 34, 0.342)";
+      toDoDiv.style.backgroundColor = "rgba(34, 138, 34, 0.200)";
 
       const title = document.createElement("p");
       title.classList.add("toDo-title");
       title.innerHTML = `${lowPriorityItems[i].title}`;
+
+      const expandBtn = document.createElement("span");
+      expandBtn.innerHTML = "&#43;";
+      expandBtn.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`;
+      expandBtn.classList.add("expand-todo");
+
       const toDoDeleteBtn = document.createElement("span");
       toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(lowPriorityItems[i])}`;
-      toDoDeleteBtn.innerHTML = "&times;";
+      toDoDeleteBtn.innerHTML = "&#10003;";
       toDoDeleteBtn.classList.add("toDo-deleteBtn");
+
+      const dueDate = document.createElement("p");
+      dueDate.innerHTML = `Due By: ${myToDoItems[i].dueDate}`;
+      dueDate.classList.add("due-date");
+
       const description = document.createElement("p");
+      description.classList.add("task-description-hidden");
       description.innerHTML = `${lowPriorityItems[i].description}`;
 
       toDoDiv.appendChild(title);
       toDoDiv.appendChild(toDoDeleteBtn);
+      toDoDiv.appendChild(expandBtn);
+      toDoDiv.appendChild(dueDate);
       toDoDiv.appendChild(description);
       toDoWrapper.appendChild(toDoDiv);
       document.body.appendChild(toDoWrapper);
@@ -189,5 +244,6 @@ export {
   showAllTasks,
   showHighPriorityTasks,
   showMediumPriorityTasks,
-  showLowPriorityTasks
+  showLowPriorityTasks,
+  toggleDescription
 };

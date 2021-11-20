@@ -83,6 +83,20 @@
     background: none;
     margin-top: 20px;
 }
+.toDo-div-noItems {
+    display: block;
+    text-align: left;
+    padding: 8px;
+    margin: 50px;
+    color: rgba(36, 36, 36, 0.678);
+    font-size: x-large;
+    font-weight: bold;
+    height: 100px;
+    width: 40%;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    overflow: auto;
+}
 .toDo-title {
     background: none;
     display: inline-block;

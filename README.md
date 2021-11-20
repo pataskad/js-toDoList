@@ -1,4 +1,4 @@
-# JavaScript To Do Application
+# JavaScript Todo Application
 
 [Live Demo Coming Soon]()
 

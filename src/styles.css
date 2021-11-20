@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: ghostwhite;
+    background-color: rgb(238, 238, 240);
 }
 .page-header {
     height: auto;
@@ -19,13 +19,10 @@
     margin: 12px 0 10px 0;
 }
 .add-item {
-    height: auto;
-    width: auto;
     position: absolute;
     right: 1%;
-    padding: 10px 12px 10px 12px;
     background: none;
-    font-size: xx-large;
+    font-size: xxx-large;
     border: none;
     color: whitesmoke;
     cursor: pointer;
@@ -41,7 +38,7 @@
     width: 8%;
     position: fixed;
     text-align: left;
-    background-color: rgba(219, 218, 218, 0.788);
+    background-color: rgba(201, 200, 200, 0.87);
     box-shadow: -1px 2px 5px rgba(10, 10, 10, 1);
 }
 .tasks-nav {
@@ -70,6 +67,7 @@
     margin: 40px 0 0 30px;
     color: rgba(36, 36, 36, 0.877);
     background-color: rgba(34, 138, 34, 0.342);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.473);
     width: 40%;
     border-radius: 5px;
     border: 1px solid transparent;
@@ -78,9 +76,6 @@
 .toDo-div > p {
     background: none;
 }
-/* .description {
-    animation: 2s ease-in-out 1s 1;
-} */
 .task-description-hidden {
     display: none;
 }
@@ -116,14 +111,20 @@
     font-size: 20px;
 }
 .expand-todo {
+    background: ghostwhite;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.473);
     float: right;
-    background: none;
     font-size: xx-large;
-    margin: 0 10px 0 0;
+    margin: 0 3px 0 0;
     cursor: pointer;
 }
 .toDo-deleteBtn {
-    background: none;
+    background: ghostwhite;
+    padding: 0 2px 0 2px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.473);
     cursor: pointer;
     float: right;
     font-size: xx-large;

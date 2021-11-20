@@ -108,6 +108,7 @@ function showHighPriorityTasks () {
 
       const description = document.createElement("p");
       description.classList.add("task-description-hidden");
+      description.classList.add("description");
       description.innerHTML = `${highPriorityItems[i].description}`;
 
       toDoDiv.appendChild(title);
@@ -167,6 +168,7 @@ function showMediumPriorityTasks () {
 
       const description = document.createElement("p");
       description.classList.add("task-description-hidden");
+      description.classList.add("description");
       description.innerHTML = `${mediumPriorityItems[i].description}`;
 
       toDoDiv.appendChild(title);
@@ -226,6 +228,7 @@ function showLowPriorityTasks () {
 
       const description = document.createElement("p");
       description.classList.add("task-description-hidden");
+      description.classList.add("description");
       description.innerHTML = `${lowPriorityItems[i].description}`;
 
       toDoDiv.appendChild(title);

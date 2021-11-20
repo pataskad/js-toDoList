@@ -116,7 +116,6 @@ function toDoItemRender () {
 
     const description = document.createElement("p");
     description.classList.add("task-description-hidden");
-    // description.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`;
     description.classList.add("description");
     description.innerHTML = `${myToDoItems[i].description}`;
 

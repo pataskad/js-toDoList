@@ -33,16 +33,16 @@ window.addEventListener("load", function () {
       deleteItem(e);
     }
     if (e.target.matches(".tasks-nav")) {
-      if (e.target.dataset.attribute == 0) {
+      if (e.target.dataset.attribute === "0") {
         showAllTasks();
       }
-      if (e.target.dataset.attribute == 1) {
+      if (e.target.dataset.attribute === "1") {
         showHighPriorityTasks();
       }
-      if (e.target.dataset.attribute == 2) {
+      if (e.target.dataset.attribute === "2") {
         showMediumPriorityTasks();
       }
-      if (e.target.dataset.attribute == 3) {
+      if (e.target.dataset.attribute === "3") {
         showLowPriorityTasks();
       }
     }

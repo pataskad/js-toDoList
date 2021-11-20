@@ -12,4 +12,5 @@
 * Webpack
 * npm/Node.js
 * Git/GitHub
+* eslint (Code formatting)
 * lodash (low usage)

@@ -84,13 +84,13 @@ function toDoItemRender () {
     const toDoDiv = document.createElement("div");
     toDoDiv.classList.add("toDo-div");
 
-    if (myToDoItems[i].priority == 1) {
+    if (myToDoItems[i].priority === 1) {
       toDoDiv.style.backgroundColor = "rgba(34, 138, 34, 0.342)";
     }
-    if (myToDoItems[i].priority == 2) {
+    if (myToDoItems[i].priority === 2) {
       toDoDiv.style.backgroundColor = "rgba(143, 117, 21, .342)";
     }
-    if (myToDoItems[i].priority == 3) {
+    if (myToDoItems[i].priority === 3) {
       toDoDiv.style.backgroundColor = "rgba(204, 54, 54, 0.342)";
     }
 

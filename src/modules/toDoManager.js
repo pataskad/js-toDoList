@@ -14,11 +14,14 @@ let lowPriorityClicked = false;
 
 function deleteItem (e) {
   clearOldItems();
+
   const itemIndex = e.target.dataset.attribute;
   myToDoItems.splice(itemIndex, 1);
 
+  console.log(e.target);
+
   if (allProjectsClicked) {
-    toDoItemRender();
+    showAllTasks();
   } else if (highPriorityClicked) {
     showHighPriorityTasks();
   } else if (mediumPriorityClicked) {
@@ -60,8 +63,8 @@ function showHighPriorityTasks () {
     title.classList.add("toDo-title");
     title.innerHTML = `${highPriorityItems[i].title}`;
     const toDoDeleteBtn = document.createElement("span");
+    toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(highPriorityItems[i])}`;
     toDoDeleteBtn.innerHTML = "&times;";
-    toDoDeleteBtn.dataset.attribute = `${highPriorityItems.indexOf(highPriorityItems[i])}`;
     toDoDeleteBtn.classList.add("toDo-deleteBtn");
     const description = document.createElement("p");
     description.innerHTML = `${highPriorityItems[i].description}`;
@@ -96,8 +99,8 @@ function showMediumPriorityTasks () {
     title.classList.add("toDo-title");
     title.innerHTML = `${mediumPriorityItems[i].title}`;
     const toDoDeleteBtn = document.createElement("span");
+    toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(mediumPriorityItems[i])}`;
     toDoDeleteBtn.innerHTML = "&times;";
-    toDoDeleteBtn.dataset.attribute = `${mediumPriorityItems.indexOf(mediumPriorityItems[i])}`;
     toDoDeleteBtn.classList.add("toDo-deleteBtn");
     const description = document.createElement("p");
     description.innerHTML = `${mediumPriorityItems[i].description}`;
@@ -132,8 +135,8 @@ function showLowPriorityTasks () {
     title.classList.add("toDo-title");
     title.innerHTML = `${lowPriorityItems[i].title}`;
     const toDoDeleteBtn = document.createElement("span");
+    toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(lowPriorityItems[i])}`;
     toDoDeleteBtn.innerHTML = "&times;";
-    toDoDeleteBtn.dataset.attribute = `${lowPriorityItems.indexOf(lowPriorityItems[i])}`;
     toDoDeleteBtn.classList.add("toDo-deleteBtn");
     const description = document.createElement("p");
     description.innerHTML = `${lowPriorityItems[i].description}`;

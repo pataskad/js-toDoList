@@ -1,6 +1,7 @@
 import "./styles.css";
 import { displayRender } from "./modules/displayRender";
 import { ToDoItem, myToDoItems } from "./modules/createToDo";
+import { showAddItemModal, cancelInputModal } from "./modules/addTodoModal";
 import {
   deleteItem,
   showAllTasks,
@@ -20,7 +21,7 @@ window.addEventListener("load", function () {
   myToDoItems.push(test2);
 
   // loop for testing high volume tasks
-  /*     for (let i = 0; i < 10; i++) {
+  /*       for (let i = 0; i < 10; i++) {
         let test = new ToDoItem("Placeholder Title", "Placeholder Description", "Nov 5th, 5pm", 2)
         myToDoItems.push(test)
     } */
@@ -34,6 +35,15 @@ window.addEventListener("load", function () {
     }
     if (e.target.matches(".expand-todo")) {
       toggleDescription(e);
+    }
+    if (e.target.matches(".add-item")) {
+      showAddItemModal();
+    }
+    if (e.target.matches(".modal-close-btn")) {
+      cancelInputModal();
+    }
+    if (e.target === document.querySelector(".modal")) {
+      cancelInputModal();
     }
     if (e.target.matches(".tasks-nav")) {
       if (e.target.dataset.attribute === "0") {

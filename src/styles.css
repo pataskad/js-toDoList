@@ -20,7 +20,7 @@
 }
 .add-item {
     position: absolute;
-    right: 1%;
+    left: 3%;
     background: none;
     font-size: xxx-large;
     border: none;
@@ -56,19 +56,21 @@
 }
 .toDo-wrapper {
     float: right;
-    width: 89%;
+    width: 100%;
     height: auto;
-    margin: 60px 10px 0 0;
+    text-align: center;
+    margin: 70px -25px 40px 0;
 }
 .toDo-div {
     display: inline-block;
     vertical-align: top;
+    text-align: left;
     padding: 10px 10px 20px 15px;
-    margin: 40px 0 0 30px;
+    margin: 20px;
     color: rgba(36, 36, 36, 0.877);
     background-color: rgba(34, 138, 34, 0.342);
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.473);
-    width: 40%;
+    width: 35%;
     border-radius: 5px;
     border: 1px solid transparent;
     overflow: auto;
@@ -92,7 +94,7 @@
     display: block;
     text-align: left;
     padding: 8px;
-    margin: 50px;
+    margin: 50px 50px 50px 200px;
     color: rgba(36, 36, 36, 0.678);
     font-size: x-large;
     font-weight: bold;
@@ -160,4 +162,94 @@
 .signature > a > img {
     background: none;
     margin: 20px;
+}
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    background: none;
+    width: 100%;
+    overflow: auto;
+}
+.modal-content {
+    margin: 100px auto;
+    padding: 5px 10px 15px 10px;
+    border: 3px solid rgba(75, 46, 46, 0.795);
+    box-shadow: 0 0 10px 3px rgb(165, 40, 40);
+    width: 30%;
+    height: 48%;
+    color: rgb(80, 79, 79);
+    border-radius: 15px;
+    padding-bottom: 55px;
+}
+.modal-content > h3 {
+    margin: 10px;
+    font-size: x-large;
+}
+.modal-close-btn {
+    color: rgb(75, 46, 46);
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: bold;
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+.blur-background {
+    filter: blur(5px);
+}
+#modal-form {
+    display: grid;
+    line-height: 2.5;
+    border-top: 2px solid rgba(29, 29, 29, 0.582);
+    margin: 20px 0 40px 0;
+}
+.modal-form-labels {
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+    color: rgb(80, 79, 79);
+}
+.modal-form-controls {
+    padding: 3px 5px 3px 8px;
+    height: 20px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+}
+.modal-form-controls:focus-visible {
+    outline: none;
+    box-shadow: 0 0 3px 2px lightskyblue;
+    border: 1px solid transparent;
+}
+#todo-due-date {
+    padding-right: 20px;
+}
+#todo-description {
+    min-height: 80px;
+    max-height: 300px;
+    resize: vertical;
+}
+#todo-priority {
+    width: 30px;
+}
+#modal-submit-btn {
+    width: 30%;
+    float: right;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 5px;
+    color: white;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    background-color: rgba(0, 140, 255, 0.767);
+    padding: 12px;
+}
+#modal-submit-btn:hover {
+    box-shadow: 0 0 3px 2px lightskyblue;
+}
+#modal-submit-btn:active {
+    transform: translateY(1px);
 }

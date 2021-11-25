@@ -224,6 +224,23 @@
     box-shadow: 0 0 3px 2px lightskyblue;
     border: 1px solid transparent;
 }
+.modal-error-output-hidden {
+    display: none;
+}
+.modal-error-output-visible {
+    display: block;
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.781) !important;
+    margin: 5px 0 -10px 0 !important;
+}
+.modal-form-controls-bad-input {
+    border: 1px solid rgba(255, 0, 0, 0.781);
+    box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.781);
+}
+.modal-form-controls-bad-input:focus-visible {
+    border: 1px solid rgba(223, 39, 39);
+    box-shadow: 0 0 3px 1px rgba(255, 0, 0, 0.781);
+}
 #todo-due-date {
     padding-right: 20px;
 }

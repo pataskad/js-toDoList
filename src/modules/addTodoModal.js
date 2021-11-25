@@ -26,6 +26,12 @@ function showAddItemModal () {
   // form block - submit button added outside this block
   const modalForm = document.createElement("form");
   modalForm.id = "modal-form";
+
+  const modalErrorOutput = document.createElement("small");
+  modalErrorOutput.id = "form-error";
+  modalErrorOutput.classList.add("modal-error-output-hidden");
+  modalErrorOutput.textContent = "*Please fill out highlighted fields";
+
   const modalTitleLabel = document.createElement("label");
   modalTitleLabel.classList.add("modal-form-labels");
   modalTitleLabel.for = "todo-title";
@@ -80,6 +86,7 @@ function showAddItemModal () {
   modalSubmitBtn.type = "submit";
 
   // append child elements to form block
+  modalForm.appendChild(modalErrorOutput);
   modalForm.appendChild(modalTitleLabel);
   modalForm.appendChild(modalTitleInput);
   modalForm.appendChild(modalDueDateLabel);
@@ -110,7 +117,7 @@ function blurBackground () {
   header.classList.add("blur-background");
   contentArr.forEach(todo => todo.classList.add("blur-background"));
 }
-function cancelInputModal () {
+function removeInputModal () {
   // clear form inputs
   const titleInput = document.querySelector("#todo-title");
   titleInput.value = "";
@@ -136,5 +143,5 @@ function cancelInputModal () {
 
 export {
   showAddItemModal,
-  cancelInputModal
+  removeInputModal
 };

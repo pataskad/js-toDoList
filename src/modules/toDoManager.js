@@ -3,7 +3,7 @@ import "../styles.css";
 import { myToDoItems } from "./createToDo";
 import { toDoItemRender, clearOldItems } from "./displayRender";
 
-/* this module will contain functions to manage toDo items,
+/* this module will contain functions to manage toDo items on the display,
 starting with the logic/function to delete and refresh toDo item array */
 
 // track which priority is 'active' to prevent unwanted changing of active tabs when deleting tasks

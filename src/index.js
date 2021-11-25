@@ -1,7 +1,7 @@
 import "./styles.css";
 import { displayRender } from "./modules/displayRender";
-import { ToDoItem, myToDoItems } from "./modules/createToDo";
-import { showAddItemModal, cancelInputModal } from "./modules/addTodoModal";
+import { ToDoItem, myToDoItems, createNewToDo } from "./modules/createToDo";
+import { showAddItemModal, removeInputModal } from "./modules/addTodoModal";
 import {
   deleteItem,
   showAllTasks,
@@ -40,11 +40,19 @@ window.addEventListener("load", function () {
       showAddItemModal();
     }
     if (e.target.matches(".modal-close-btn")) {
-      cancelInputModal();
+      removeInputModal();
+    }
+    if (e.target.matches("#modal-submit-btn")) {
+      // submit form button
+      // run validation (Must have Title, dueDate, and description.  Priority defaults to level 1, lowest.)
+      // if validation fails, focus first line with error and output error message to user
+      // render items again to show new task
+      createNewToDo();
     }
     if (e.target === document.querySelector(".modal")) {
-      cancelInputModal();
+      removeInputModal();
     }
+    // filter and render different priority tasks
     if (e.target.matches(".tasks-nav")) {
       if (e.target.dataset.attribute === "0") {
         showAllTasks();

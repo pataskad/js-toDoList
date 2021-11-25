@@ -250,6 +250,3 @@
 #modal-submit-btn:hover {
     box-shadow: 0 0 3px 2px lightskyblue;
 }
-#modal-submit-btn:active {
-    transform: translateY(1px);
-}

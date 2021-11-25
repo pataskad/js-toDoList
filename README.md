@@ -13,4 +13,5 @@
 * npm/Node.js
 * Git/GitHub
 * eslint (Code formatting)
-* lodash (low usage)
+* lodash (filtering projects on priority)
+* Moment (formatting due date strings)

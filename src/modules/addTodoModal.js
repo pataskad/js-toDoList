@@ -1,4 +1,5 @@
 import "../styles.css";
+import moment from "moment";
 
 /* show modal that includes form to add new Todo item
 add date package for choosing due date
@@ -45,7 +46,8 @@ function showAddItemModal () {
   modalDueDateInput.type = "date";
   modalDueDateInput.name = "todo-due-date";
   modalDueDateInput.id = "todo-due-date";
-  modalDueDateInput.min = new Date().toLocaleDateString();
+  modalDueDateInput.min = moment(new Date()).format("YYYY-MM-DD"); // moment used for formatting dates for correct input/constraints
+  modalDueDateInput.value = moment(new Date()).format("YYYY-MM-DD");
 
   const modalDescriptionLabel = document.createElement("label");
   modalDescriptionLabel.classList.add("modal-form-labels");

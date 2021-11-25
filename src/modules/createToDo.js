@@ -36,6 +36,7 @@ function createNewToDo (title, description, dueDate, priority) {
       newToDoTitle.classList.add("modal-form-controls-bad-input");
       newToDoDescription.classList.add("modal-form-controls-bad-input");
       newToDoTitle.focus();
+
       return false;
     } else if (newToDoTitle.value !== "" && newToDoDescription.value === "") {
       errorOutput.classList.remove("modal-error-output-hidden");
@@ -43,12 +44,14 @@ function createNewToDo (title, description, dueDate, priority) {
       newToDoTitle.classList.remove("modal-form-controls-bad-input");
       newToDoDescription.classList.add("modal-form-controls-bad-input");
       newToDoDescription.focus();
+
       return false;
     } else if (newToDoTitle.value === "" && newToDoDescription.value !== "") {
       errorOutput.classList.remove("modal-error-output-hidden");
       errorOutput.classList.add("modal-error-output-visible");
       newToDoTitle.classList.add("modal-form-controls-bad-input");
       newToDoDescription.classList.remove("modal-form-controls-bad-input");
+
       return false;
     }
     return true;
@@ -65,7 +68,6 @@ function createNewToDo (title, description, dueDate, priority) {
 
     removeInputModal();
     showAllTasks();
-    console.log(myToDoItems); // testing/debugging purposes!
     return task;
   }
 }

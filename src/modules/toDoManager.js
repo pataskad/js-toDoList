@@ -86,7 +86,7 @@ function showHighPriorityTasks () {
       const toDoDiv = document.createElement("div");
       toDoDiv.classList.add("toDo-div");
 
-      toDoDiv.style.backgroundColor = "rgba(204, 54, 54, 0.200)";
+      toDoDiv.style.backgroundColor = "rgba(219, 9, 9, 0.48)";
 
       const title = document.createElement("p");
       title.classList.add("toDo-title");
@@ -146,7 +146,7 @@ function showMediumPriorityTasks () {
       const toDoDiv = document.createElement("div");
       toDoDiv.classList.add("toDo-div");
 
-      toDoDiv.style.backgroundColor = "rgba(143, 117, 21, .200)";
+      toDoDiv.style.backgroundColor = "rgba(231, 182, 0, .66)";
 
       const title = document.createElement("p");
       title.classList.add("toDo-title");
@@ -206,7 +206,7 @@ function showLowPriorityTasks () {
       const toDoDiv = document.createElement("div");
       toDoDiv.classList.add("toDo-div");
 
-      toDoDiv.style.backgroundColor = "rgba(34, 138, 34, 0.200)";
+      toDoDiv.style.backgroundColor = "rgba(0, 183, 0, 0.7)";
 
       const title = document.createElement("p");
       title.classList.add("toDo-title");

@@ -1,6 +1,6 @@
 import "../styles.css";
 import { myToDoItems } from "./createToDo";
-import "../assets/images/GitHub-Mark-32px.png";
+import "../assets/images/GitHub-Mark-64px.png";
 
 function displayRender () {
   /* separate functions used to for creating each section of the page before nesting
@@ -42,28 +42,26 @@ function asideRender () {
   allProjects.classList.add("tasks-nav");
   allProjects.textContent = "All Projects";
   allProjects.style.fontSize = "x-large";
+  allProjects.style.fontWeight = "bold";
 
   const highPriority = document.createElement("p");
   highPriority.dataset.attribute = 1;
   highPriority.classList.add("tasks-nav");
   highPriority.textContent = "High Priority";
-  highPriority.style.color = "rgba(250, 54, 54, 0.822)";
 
   const mediumPriority = document.createElement("p");
   mediumPriority.dataset.attribute = 2;
   mediumPriority.classList.add("tasks-nav");
   mediumPriority.textContent = "Medium Priority";
-  mediumPriority.style.color = "rgba(143, 117, 21)";
 
   const lowPriority = document.createElement("p");
   lowPriority.dataset.attribute = 3;
   lowPriority.classList.add("tasks-nav");
   lowPriority.textContent = "Low Priority";
-  lowPriority.style.color = "rgba( 52, 137, 52)";
 
   const signature = document.createElement("small");
   signature.classList.add("signature");
-  signature.innerHTML = "Made By: <a href=\"https://www.linkedin.com/in/dallas-pataska/\">Dallas Pataska</a><br><a href=\"https://github.com/pataskad/js-toDoList\"><img src=\"0035c307a36c17babb8d.png\"></a>";
+  signature.innerHTML = "Made By: <a href=\"https://www.linkedin.com/in/dallas-pataska/\">Dallas Pataska</a><br><a href=\"https://www.github.com/pataskad/js-toDoList\"><img src=\"b039b2d83982c8256af3.png\"/></a>";
 
   asideNav.appendChild(taskDiv);
   asideNav.appendChild(allProjects);
@@ -87,13 +85,13 @@ function toDoItemRender () {
     toDoDiv.classList.add("toDo-div");
 
     if (myToDoItems[i].priority === 1) {
-      toDoDiv.style.backgroundColor = "rgba(34, 138, 34, 0.200)";
+      toDoDiv.style.backgroundColor = "rgba(0, 183, 0, 0.700)";
     }
     if (myToDoItems[i].priority === 2) {
-      toDoDiv.style.backgroundColor = "rgba(143, 117, 21, .200)";
+      toDoDiv.style.backgroundColor = "rgba(231, 182, 0, .66)";
     }
     if (myToDoItems[i].priority === 3) {
-      toDoDiv.style.backgroundColor = "rgba(204, 54, 54, 0.200)";
+      toDoDiv.style.backgroundColor = "rgba(219, 9, 9, 0.48)";
     }
 
     const title = document.createElement("p");

@@ -68,7 +68,6 @@
     padding: 10px 10px 20px 15px;
     margin: 20px;
     color: rgba(36, 36, 36, 0.877);
-    background-color: rgba(34, 138, 34, 0.342);
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.473);
     width: 35%;
     border-radius: 5px;
@@ -130,7 +129,7 @@
     cursor: pointer;
     float: right;
     font-size: xx-large;
-    color: rgba(54, 204, 74, 0.822);
+    color: rgba(6, 145, 25, 0.822);
 }
 .task-div {
     background: none;
@@ -148,8 +147,8 @@
     color: gray !important;
     background: none;
     position: fixed;
-    margin-top: 20px;
-    padding-top: 30px;
+    margin-top: 30px;
+    padding-top: 40px;
     border-top: 1px solid black;
     text-align: center;
 }
@@ -161,7 +160,7 @@
 }
 .signature > a > img {
     background: none;
-    margin: 20px;
+    margin: 35px 20px 20px 20px;
 }
 .modal {
     display: block;

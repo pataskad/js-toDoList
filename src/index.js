@@ -1,5 +1,8 @@
 import { displayRender } from "./modules/displayRender";
-import { ToDoItem, myToDoItems, createNewToDo } from "./modules/createToDo";
+import {
+  createNewToDo,
+  retrieveFromLocalStorage
+} from "./modules/createToDo";
 import { showAddItemModal, removeInputModal } from "./modules/addTodoModal";
 import {
   deleteItem,
@@ -11,11 +14,7 @@ import {
 } from "./modules/toDoManager";
 
 window.addEventListener("load", function () {
-  // testing item object
-  const test = new ToDoItem("Placeholder Title", "Placeholder Description", "11/25/21", 2);
-  myToDoItems.push(test);
-  const test2 = new ToDoItem("Placeholder Title", "Placeholder Description", "11/25/21", 3);
-  myToDoItems.push(test2);
+  retrieveFromLocalStorage();
 
   // renders basic layout, nav, header, and formatting of initial display elements.
   displayRender();

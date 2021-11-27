@@ -2,16 +2,29 @@ import moment from "moment";
 import { removeInputModal } from "./addTodoModal";
 import { showAllTasks } from "./toDoManager";
 
-// priorities (Low - 1, Med - 2, High - 3)
+/* priorities (Low - 1, Med - 2, High - 3)
+module includes localStorage configuration for storing tasks across sessions
+local to each users computer, meaning user must use save device in order to access saved tasks
+*/
 
-const myToDoItems = [
+let myToDoItems = [
   {
-    title: "Placeholder Title",
+    title: "Delete Me, Placeholder!",
     description: "Delete Me",
     dueDate: "Decemeber 27th, 2021",
     priority: 1
   }
 ];
+
+// localStorage Configuration
+function saveToLocalStorage () {
+  localStorage.setItem("toDoItems", JSON.stringify(myToDoItems));
+}
+function retrieveFromLocalStorage () {
+  const retrievedTasks = localStorage.getItem("toDoItems");
+  myToDoItems = JSON.parse(retrievedTasks);
+  return myToDoItems;
+}
 
 class ToDoItem {
   constructor (title, description, dueDate, priority) {
@@ -67,6 +80,7 @@ function createNewToDo (title, description, dueDate, priority) {
     myToDoItems.push(task);
 
     removeInputModal();
+    saveToLocalStorage();
     showAllTasks();
     return task;
   }
@@ -75,5 +89,7 @@ function createNewToDo (title, description, dueDate, priority) {
 export {
   ToDoItem,
   createNewToDo,
+  saveToLocalStorage,
+  retrieveFromLocalStorage,
   myToDoItems
 };

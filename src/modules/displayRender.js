@@ -80,50 +80,58 @@ function toDoItemRender () {
   const toDoWrapper = document.createElement("div");
   toDoWrapper.classList.add("toDo-wrapper");
 
-  for (let i = 0; i < myToDoItems.length; i++) {
-    const toDoDiv = document.createElement("div");
-    toDoDiv.classList.add("toDo-div");
-
-    if (myToDoItems[i].priority === 1) {
-      toDoDiv.style.backgroundColor = "rgba(0, 183, 0, 0.700)";
-    }
-    if (myToDoItems[i].priority === 2) {
-      toDoDiv.style.backgroundColor = "rgba(231, 182, 0, .66)";
-    }
-    if (myToDoItems[i].priority === 3) {
-      toDoDiv.style.backgroundColor = "rgba(219, 9, 9, 0.48)";
-    }
-
-    const title = document.createElement("p");
-    title.classList.add("toDo-title");
-    title.innerHTML = `${myToDoItems[i].title}`;
-
-    const expandBtn = document.createElement("span");
-    expandBtn.innerHTML = "&#43;";
-    expandBtn.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`;
-    expandBtn.classList.add("expand-todo");
-
-    const toDoDeleteBtn = document.createElement("span");
-    toDoDeleteBtn.innerHTML = "&#10003;";
-    toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`;
-    toDoDeleteBtn.classList.add("toDo-deleteBtn");
-
-    const dueDate = document.createElement("p");
-    dueDate.innerHTML = `Due By: ${myToDoItems[i].dueDate}`;
-    dueDate.classList.add("due-date");
-
-    const description = document.createElement("p");
-    description.classList.add("task-description-hidden");
-    description.classList.add("description");
-    description.innerHTML = `${myToDoItems[i].description}`;
-
-    toDoDiv.appendChild(title);
-    toDoDiv.appendChild(toDoDeleteBtn);
-    toDoDiv.appendChild(expandBtn);
-    toDoDiv.appendChild(dueDate);
-    toDoDiv.appendChild(description);
-    toDoWrapper.appendChild(toDoDiv);
+  if (myToDoItems.length === 0) {
+    const noItems = document.createElement("div");
+    noItems.classList.add("toDo-div-noItems");
+    noItems.innerHTML = "No Task Items Created Yet...";
+    toDoWrapper.appendChild(noItems);
     document.body.appendChild(toDoWrapper);
+  } else {
+    for (let i = 0; i < myToDoItems.length; i++) {
+      const toDoDiv = document.createElement("div");
+      toDoDiv.classList.add("toDo-div");
+
+      if (myToDoItems[i].priority === 1) {
+        toDoDiv.style.backgroundColor = "rgba(0, 183, 0, 0.700)";
+      }
+      if (myToDoItems[i].priority === 2) {
+        toDoDiv.style.backgroundColor = "rgba(231, 182, 0, .66)";
+      }
+      if (myToDoItems[i].priority === 3) {
+        toDoDiv.style.backgroundColor = "rgba(219, 9, 9, 0.48)";
+      }
+
+      const title = document.createElement("p");
+      title.classList.add("toDo-title");
+      title.innerHTML = `${myToDoItems[i].title}`;
+
+      const expandBtn = document.createElement("span");
+      expandBtn.innerHTML = "&#43;";
+      expandBtn.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`;
+      expandBtn.classList.add("expand-todo");
+
+      const toDoDeleteBtn = document.createElement("span");
+      toDoDeleteBtn.innerHTML = "&#10003;";
+      toDoDeleteBtn.dataset.attribute = `${myToDoItems.indexOf(myToDoItems[i])}`;
+      toDoDeleteBtn.classList.add("toDo-deleteBtn");
+
+      const dueDate = document.createElement("p");
+      dueDate.innerHTML = `Due By: ${myToDoItems[i].dueDate}`;
+      dueDate.classList.add("due-date");
+
+      const description = document.createElement("p");
+      description.classList.add("task-description-hidden");
+      description.classList.add("description");
+      description.innerHTML = `${myToDoItems[i].description}`;
+
+      toDoDiv.appendChild(title);
+      toDoDiv.appendChild(toDoDeleteBtn);
+      toDoDiv.appendChild(expandBtn);
+      toDoDiv.appendChild(dueDate);
+      toDoDiv.appendChild(description);
+      toDoWrapper.appendChild(toDoDiv);
+      document.body.appendChild(toDoWrapper);
+    }
   }
 }
 function clearOldItems () {

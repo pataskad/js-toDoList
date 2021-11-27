@@ -73,21 +73,20 @@ function asideRender () {
 }
 function toDoItemRender () {
   saveToLocalStorage();
-  myToDoItems.sort(function (a, b) {
-    // sort function places highest priority toDo items first
-    return b.priority - a.priority;
-  });
-
   const toDoWrapper = document.createElement("div");
   toDoWrapper.classList.add("toDo-wrapper");
 
-  if (!myToDoItems.length) {
+  if (myToDoItems.length === 0) {
     const noItems = document.createElement("div");
     noItems.classList.add("toDo-div-noItems");
     noItems.innerHTML = "No Task Items Created Yet...";
     toDoWrapper.appendChild(noItems);
     document.body.appendChild(toDoWrapper);
   } else {
+    myToDoItems.sort(function (a, b) {
+      // sort function places highest priority toDo items first
+      return b.priority - a.priority;
+    });
     for (let i = 0; i < myToDoItems.length; i++) {
       const toDoDiv = document.createElement("div");
       toDoDiv.classList.add("toDo-div");

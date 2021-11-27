@@ -18,7 +18,12 @@ let myToDoItems = [
 
 // localStorage Configuration
 function saveToLocalStorage () {
-  localStorage.setItem("toDoItems", JSON.stringify(myToDoItems));
+  if (!myToDoItems) {
+    myToDoItems = [];
+    localStorage.setItem("toDoItems", JSON.stringify(myToDoItems));
+  } else {
+    localStorage.setItem("toDoItems", JSON.stringify(myToDoItems));
+  }
 }
 function retrieveFromLocalStorage () {
   const retrievedTasks = localStorage.getItem("toDoItems");

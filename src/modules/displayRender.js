@@ -1,5 +1,5 @@
 import "../styles.css";
-import { myToDoItems } from "./createToDo";
+import { myToDoItems, saveToLocalStorage } from "./createToDo";
 import "../assets/images/GitHub-Mark-64px.png";
 
 function displayRender () {
@@ -72,6 +72,7 @@ function asideRender () {
   document.body.appendChild(asideNav);
 }
 function toDoItemRender () {
+  saveToLocalStorage();
   myToDoItems.sort(function (a, b) {
     // sort function places highest priority toDo items first
     return b.priority - a.priority;
@@ -80,7 +81,7 @@ function toDoItemRender () {
   const toDoWrapper = document.createElement("div");
   toDoWrapper.classList.add("toDo-wrapper");
 
-  if (myToDoItems.length === 0) {
+  if (!myToDoItems.length) {
     const noItems = document.createElement("div");
     noItems.classList.add("toDo-div-noItems");
     noItems.innerHTML = "No Task Items Created Yet...";

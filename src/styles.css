@@ -35,7 +35,8 @@
     margin: 60px 0 0 0;
     padding: 40px 20px 20px 20px;
     height: -webkit-fill-available;
-    width: 8%;
+    width: 8vw;
+    min-width: 150px;
     position: fixed;
     text-align: left;
     background-color: rgba(201, 200, 200, 0.87);
@@ -56,10 +57,9 @@
 }
 .toDo-wrapper {
     float: right;
-    width: 100%;
+    width: 85vw;
     height: auto;
-    text-align: center;
-    margin: 70px -25px 40px 0;
+    margin: 80px 0 40px 15vw;
 }
 .toDo-div {
     display: inline-block;
@@ -93,12 +93,11 @@
     display: block;
     text-align: left;
     padding: 8px;
-    margin: 50px 50px 50px 200px;
     color: rgba(36, 36, 36, 0.678);
     font-size: x-large;
     font-weight: bold;
     height: 100px;
-    width: 40%;
+    width: 40vw;
     border-radius: 5px;
     border: 1px solid transparent;
     overflow: auto;
@@ -113,7 +112,8 @@
 }
 .expand-todo {
     background: ghostwhite;
-    padding: 0 5px 0 5px;
+    width: 35px;
+    text-align: center;
     border-radius: 5px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.473);
     float: right;
@@ -123,7 +123,8 @@
 }
 .toDo-deleteBtn {
     background: ghostwhite;
-    padding: 0 2px 0 2px;
+    width: 35px;
+    text-align: center;
     border-radius: 5px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.473);
     cursor: pointer;
